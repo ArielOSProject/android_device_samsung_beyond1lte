@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2023 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,15 +14,17 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_beyond1lte.mk \
-    $(LOCAL_DIR)/ariel_beyond1lte.mk
+# Inherit Ariel device configuration
+$(call inherit-product, vendor/ariel/config/ariel_common.mk)
 
-COMMON_LUNCH_CHOICES := \
-    lineage_beyond1lte-eng \
-    lineage_beyond1lte-user \
-    lineage_beyond1lte-userdebug \
-    ariel_beyond1lte-eng \
-    ariel_beyond1lte-user \
-    ariel_beyond1lte-userdebug \
+# Inherit from Lineage configuration
+$(call inherit-product, device/samsung/beyond1lte/lineage_beyond1lte.mk)
 
+## Device identifier. This must come after all inclusions
+PRODUCT_NAME := ariel_beyond1lte
+PRODUCT_DEVICE := beyond1lte
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := SM-G973F
+PRODUCT_MANUFACTURER := samsung
+
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
