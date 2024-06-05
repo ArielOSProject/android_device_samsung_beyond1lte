@@ -1,0 +1,12 @@
+[
+    {
+        "arielos": true,
+        "repository": "proprietary_vendor_samsung_beyond1lte",
+        "target_path": "vendor/samsung/beyond1lte"
+    },
+    {
+        "arielos": true,
+        "repository": "proprietary_vendor_samsung_exynos9820-common",
+        "target_path": "vendor/samsung/exynos9820-common"
+    }
+]
